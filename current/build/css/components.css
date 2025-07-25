@@ -1,0 +1,19 @@
+/* コンポーネント用CSS */
+
+/* ナビゲーション追加スタイル */
+#nav ul li a {
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ページヘッダー */
+.page-header {
+    margin-bottom: 20px;
+}
+
+/* ブレッドクラム */
+.breadcrumb {
+    padding: 10px 0;
+    font-size: 12px;
+    color: #666;
+} 
