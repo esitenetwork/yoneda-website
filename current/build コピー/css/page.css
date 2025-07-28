@@ -1,0 +1,34 @@
+@import url("style.css");
+
+/* 下層ページ共通スタイル */
+
+/* ページヘッダー */
+.pageheader {
+    margin-bottom: 20px;
+}
+
+/* ページ本文 */
+#pagebody {
+    padding: 0;
+}
+
+/* ページ固有の背景設定 */
+.page-about-policy .pageheader { background: url(../images/0p_header-a01.gif) no-repeat; }
+.page-about-pricing .pageheader { background: url(../images/0p_header-a02.gif) no-repeat; }
+.page-treatment .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-treatment-joint .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-treatment-acupuncture .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-treatment-dsis .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-treatment-taping .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-treatment-physical .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-treatment-accident .pageheader { background: url(../images/0p_header-b01.gif) no-repeat; }
+.page-wellness .pageheader { background: url(../images/0p_header-b02.gif) no-repeat; }
+.page-wellness-ems-diet .pageheader { background: url(../images/0p_header-b02.gif) no-repeat; }
+.page-wellness-germanium .pageheader { background: url(../images/0p_header-b02.gif) no-repeat; }
+.page-wellness-ear-diet .pageheader { background: url(../images/0p_header-b02.gif) no-repeat; }
+.page-wellness-supplement .pageheader { background: url(../images/0p_header-b02.gif) no-repeat; }
+.page-wellness-faq .pageheader { background: url(../images/0p_header-b02.gif) no-repeat; }
+.page-clinic-tagawa .pageheader { background: url(../images/0p_header-c01.gif) no-repeat; }
+.page-clinic-kawasaki .pageheader { background: url(../images/0p_header-c02.gif) no-repeat; }
+.page-dayservice .pageheader { background: url(../images/0p_header-b03.gif) no-repeat; }
+.page-recruit .pageheader { background: url(../images/0p_header-d01.gif) no-repeat; } 

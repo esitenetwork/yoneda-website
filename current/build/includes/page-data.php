@@ -1,8 +1,7 @@
 <?php
-
-function h($str) {
-    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-}
+/**
+ * ページデータ取得関数
+ */
 
 function getPageData($page_key) {
     static $pages = null;
@@ -14,7 +13,7 @@ function getPageData($page_key) {
         'title' => 'よねだ鍼灸整骨院',
         'description' => '',
         'keywords' => '',
-        'css' => 'page.css',
+        'css' => 'common.css',
         'body_class' => 'sec',
         'breadcrumb' => [],
         'nav_active' => ''
@@ -25,27 +24,60 @@ function getCurrentPageKey() {
     $uri = $_SERVER['REQUEST_URI'];
     $path = parse_url($uri, PHP_URL_PATH);
     
-    // ファイル名を取得
-    $basename = basename($_SERVER['PHP_SELF'], '.php');
+    // URL → ページキーのマッピング
+    $routes = [
+        '/' => 'home',
+        '/index.php' => 'home',
+        '/pages/about/policy.php' => 'about/policy',
+        '/pages/about/pricing.php' => 'about/pricing',
+        '/pages/treatment/index.php' => 'treatment/index',
+        '/pages/treatment/joint.php' => 'treatment/joint',
+        '/pages/treatment/acupuncture.php' => 'treatment/acupuncture',
+        '/pages/treatment/dsis.php' => 'treatment/dsis',
+        '/pages/treatment/taping.php' => 'treatment/taping',
+        '/pages/treatment/physical.php' => 'treatment/physical',
+        '/pages/treatment/accident.php' => 'treatment/accident',
+        '/pages/wellness/index.php' => 'wellness/index',
+        '/pages/wellness/ems-diet.php' => 'wellness/ems-diet',
+        '/pages/wellness/germanium.php' => 'wellness/germanium',
+        '/pages/wellness/ear-diet.php' => 'wellness/ear-diet',
+        '/pages/wellness/supplement.php' => 'wellness/supplement',
+        '/pages/wellness/faq.php' => 'wellness/faq',
+        '/pages/clinic/tagawa.php' => 'clinic/tagawa',
+        '/pages/clinic/kawasaki.php' => 'clinic/kawasaki',
+        '/pages/dayservice.php' => 'dayservice',
+        '/pages/recruit.php' => 'recruit'
+    ];
     
-    // ディレクトリ構造に基づくマッピング
-    if (strpos($_SERVER['PHP_SELF'], '/pages/about/') !== false) {
-        return 'about/' . $basename;
-    } elseif (strpos($_SERVER['PHP_SELF'], '/pages/treatment/') !== false) {
-        return 'treatment/' . $basename;
-    } elseif (strpos($_SERVER['PHP_SELF'], '/pages/wellness/') !== false) {
-        return 'wellness/' . $basename;
-    } elseif (strpos($_SERVER['PHP_SELF'], '/pages/clinic/') !== false) {
-        return 'clinic/' . $basename;
-    } elseif (strpos($_SERVER['PHP_SELF'], '/pages/') !== false) {
-        return $basename;
-    } else {
-        return 'home';
-    }
+    return $routes[$path] ?? 'home';
 }
 
+/**
+ * HTMLエスケープ関数
+ */
+function h($str) {
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+}
+
+/**
+ * 現在のページキーを取得
+ */
+function getCurrentPage() {
+    return getCurrentPageKey();
+}
+
+/**
+ * 現在のページデータを取得
+ */
+function getCurrentPageData() {
+    return getPageData(getCurrentPageKey());
+}
+
+/**
+ * ページURLを取得
+ */
 function getPageUrl($page_key) {
-    $url_mapping = [
+    $urls = [
         'home' => '/',
         'about/policy' => '/pages/about/policy.php',
         'about/pricing' => '/pages/about/pricing.php',
@@ -68,13 +100,5 @@ function getPageUrl($page_key) {
         'recruit' => '/pages/recruit.php'
     ];
     
-    return $url_mapping[$page_key] ?? '/';
-}
-
-function getBaseUrl() {
-    return BASE_URL;
-}
-
-function getImageUrl($image_name) {
-    return 'images/' . $image_name;
+    return $urls[$page_key] ?? '/';
 } 

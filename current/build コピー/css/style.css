@@ -1,0 +1,415 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { margin: 0px; padding: 0px;}
+
+html,body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: verdana, arial, sans-serif;
+	font-size: 0.8em;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.6em;
+	background-image: url(../images/00_bg.gif);
+	background-repeat: repeat-y;
+	background-position: center;
+}
+
+a {
+	color: #0066CC;
+	overflow: hidden;
+}
+a:hover { color: #FF6600; }
+a img { border: none;}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dt,dd {
+	margin: 0px;
+	padding: 0px;
+}
+
+table { border-collapse:collapse;}
+
+/* -------------------------------------
+
+Universal styles
+
+-----------------------------------------*/
+.clearfix:after {
+  content: ".";  /* 新しい要素を作る */
+  display: block;  /* ブロックレベル要素に */
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*¥*//*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}
+
+.clearfix { display: inline-block; }
+.clearfix { display: block; }
+
+.clr { clear: both; }
+
+.fsize80 {
+	font-size: 0.8em;
+}
+.tmarker1 {
+	background-color: #FFFFCC;
+}
+.tmarker2 {
+	background-color: #CCFFFF;
+}
+.tmarker3 {
+	background-color: #FFCCFF;
+}
+
+/* -------------------------------------
+
+基本レイアウト
+
+-----------------------------------------*/
+
+#container {
+	width: 100%;
+}
+.home #container { background: url(../images/a00_hdr-bg.png) no-repeat center top;}
+.sec #container {	background: url(../images/0p_hdr-bg_b.gif) no-repeat center top;}
+#container-inner {
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+* html div#container { height: 100%;}
+#header {
+	height: 96px;
+	position: relative;
+}
+#bcmb {
+	width: 100%;
+	height: 45px;
+	padding-top: 5px;
+}
+#bcmb .list {
+	font-size: 10pt;
+	padding-top: 5px;
+	padding-left: 10px;
+	float: left;
+	color: #FFFFFF;
+}
+#contentbody {
+	margin-bottom: 50px;
+}
+#maincolumn {
+	float: right;
+	width: 710px;
+}
+.sec #maincolumn {
+	background-color: #FFFFFF;
+	padding: 10px;
+	width: 690px;
+}
+#leftcolumn {
+	float: left;
+	width: 240px;
+	background-color: #B91530;
+	padding-left: 10px;
+	overflow: hidden;
+}
+#footer {
+	width: 100%;
+	background-color: #333333;
+	color: #666666;
+	clear: both;
+	height: 300px;
+}
+
+/* -------------------------------------
+
+header
+-----------------------------------------*/
+
+#logo {
+	position: absolute;
+	left: 0px;
+	top: 20px;
+}
+#logo a {
+	display: block;
+	height: 55px;
+	width: 420px;
+	text-indent: -9999px;
+}
+
+/* -------------------------------------
+
+bcmb パンくずリスト
+-----------------------------------------*/
+#bcmb {}
+#nav-home {
+	background: url(../images/0h_btn-home.gif) no-repeat 0px 0px;
+	height: 30px;
+	width: 250px;
+	float: left;
+}
+#nav-home a {
+	display: block;
+	height: 30px;
+	width: 250px;
+	text-indent: -9999px;
+}
+#nav-home a:hover {background: url(../images/0h_btn-home.gif) no-repeat 0px -30px;}
+
+/* -------------------------------------
+
+maincolumn
+-----------------------------------------*/
+
+/* -------------------------------------
+
+left-column ナビゲーション
+-----------------------------------------*/
+
+#nav {
+	width: 230px;
+	position: relative;
+	padding-bottom: 30px;
+}
+
+/* タイトル部分 */
+#nav h3 {
+	height: 25px;
+	width: 230px;
+	margin: 0;
+	background-color: #f8f8f8;
+	border: 1px solid #dddddd;
+	color: #B91530;
+	font-size: 11px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+#nav h3:first-of-type { 
+	border-bottom: none;
+	margin-top: 0; /* 最初の見出しは上余白なし */
+}
+
+/* 2番目以降の見出しの上に余白 */
+#nav h3:not(:first-of-type) {
+	border-top: none !important;
+	border-bottom: none !important;
+	margin-top: 30px !important; /* 見出しの上に30pxの余白 */
+	margin-bottom: 10px !important; /* 見出しの下に10pxの余白 */
+}
+
+/* メニューリスト */
+#nav > ul {
+	list-style-type: none !important;
+	margin: 10px 0 20px 0 !important; /* 上10px、下20pxの余白 */
+	padding: 0 !important;
+	display: block !important; /* 確実に表示 */
+}
+
+#nav ul li {
+	height: 40px;
+	width: 230px;
+	position: relative;
+	display: block; /* 確実に表示 */
+}
+
+/* ドロップダウンメニュー（CSSのみ） */
+#nav ul li ul {
+	position: absolute;
+	left: 230px;
+	top: 0px;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	z-index: 1000;
+}
+
+#nav ul li:hover ul {
+	visibility: visible;
+	opacity: 1;
+}
+
+#nav ul li ul li {
+	height: 30px;
+	width: 190px;
+}
+
+#nav ul li a {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	width: 230px;
+	background-color: #B91530;
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: normal;
+	text-decoration: none;
+	padding-left: 15px;
+	box-sizing: border-box;
+	border-top: 1px solid #E04965;
+	border-bottom: 1px solid #7A0F1F;
+}
+
+#nav ul li ul li a {
+	height: 30px;
+	width: 190px;
+	background-color: #A01428;
+	font-size: 10px;
+	padding-left: 20px;
+}
+
+#nav ul li a:hover {
+	background-color: #669900;
+	color: #FFFFFF;
+}
+
+#nav ul li ul li a:hover {
+	background-color: #669900;
+	color: #FFFFFF;
+}
+
+#nav ul li.active a {
+	background-color: #669900;
+	color: #FFFFFF;
+}
+
+/* ナビゲーションの最初と最後の項目に追加のボーダー */
+#nav ul li:first-child a {
+	border-top: 1px solid #E04965;
+}
+
+#nav ul li:last-child a {
+	border-bottom: 1px solid #7A0F1F;
+}
+
+/* ######### CSS for shadow added to sub menus  ######### */
+.ddshadow{
+position: absolute;
+}
+
+/* -------------------------------------
+
+sec pageheader
+-----------------------------------------*/
+.pageheader {
+	height: 80px;
+	width: 690px;
+	text-indent: -9999px;
+}
+
+/* -------------------------------------
+
+footer
+-----------------------------------------*/
+#footer .inner {
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 10px;
+}
+
+#footer .box1 {
+	height: 20px;
+}
+#btn-home {
+	height: 20px;
+	width: 90px;
+	background: url(../images/0f_btn-home.gif) no-repeat 0px 0px;
+	float: right;
+}
+#btn-home a {
+	display: block;
+	height: 20px;
+	width: 90px;
+	text-indent: -9999px;
+}
+#btn-home a:hover {background: url(../images/0f_btn-home.gif) no-repeat 0px -20px;}
+
+#footer-left {
+	float: left;
+	width: 400px;
+}
+#footer-logo {
+	background-image: url(../images/0f_footer-logo.gif);
+	background-repeat: no-repeat;
+	height: 70px;
+	width: 365px;
+	text-indent: -9999px;
+}
+#link-clinic {
+	list-style-type: none;
+}
+#link-clinic li {
+	float: left;
+	height: 75px;
+	width: 80px;
+	margin-right: 10px;
+}
+#link-clinic li a {
+	display: block;
+	height: 75px;
+	width: 80px;
+	text-indent: -9999px;
+}
+#fbtn-tagawa { background: url(../images/0f_btn-clinic.gif) no-repeat 0px 0px;}
+#fbtn-soeda { background: url(../images/0f_btn-clinic.gif) no-repeat -80px 0px;}
+#fbtn-kayanomori { background: url(../images/0f_btn-clinic.gif) no-repeat -160px 0px;}
+#fbtn-iiduka { background: url(../images/0f_btn-clinic.gif) no-repeat -240px 0px;}
+/* マウスオーバー */
+#fbtn-tagawa a:hover { background: url(../images/0f_btn-clinic.gif) no-repeat 0px -75px;}
+#fbtn-soeda a:hover { background: url(../images/0f_btn-clinic.gif) no-repeat -80px -75px;}
+#fbtn-kayanomori a:hover { background: url(../images/0f_btn-clinic.gif) no-repeat -160px -75px;}
+#fbtn-iiduka a:hover { background: url(../images/0f_btn-clinic.gif) no-repeat -240px -75px;}
+
+#footer-right {
+	float: right;
+	width: 560px;
+}
+#con-map {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+#con-map li {
+	list-style-type: none;
+	padding-left: 90px;
+}
+#con-map a {
+	color: #669900;
+}
+#con-map a:hover {
+	color: #FF9900;
+}
+#cm-list1 { background: url(../images/0f_ca-tit1.gif) no-repeat 0px 5px;}
+#cm-list2 { background: url(../images/0f_ca-tit2.gif) no-repeat 0px 5px;}
+#cm-list3 { background: url(../images/0f_ca-tit3.gif) no-repeat 0px 5px;}
+#cm-list4 { background: url(../images/0f_ca-tit4.gif) no-repeat 0px 5px;}
+
+#copy {
+	clear: both;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #999999;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 50px;
+} 

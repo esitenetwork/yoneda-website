@@ -1,0 +1,148 @@
+@charset "utf-8";
+@import url("style.css");
+
+.home #maincolumn {
+	padding: 280px 10px 0px 10px;
+	width: 690px;
+}
+
+#main-left {
+	float: left;
+	width: 460px;
+	padding-right: 19px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;
+}
+#main-right {
+	width: 200px;
+	padding-left: 10px;
+	float: right;
+}
+
+/*-------------------------------
+
+ main-left
+ 
+ --------------------------------*/ 
+
+/* 川崎院移転のお知らせ CSS */
+#kawasaki-notice {
+    border: 5px solid #B0CB66;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#kawasaki-notice .title {
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: #B0CB66;
+    color: #799E11;
+    font-weight: bold;
+}
+
+#kawasaki-notice .body {
+    padding-top: 15px;
+}
+
+#kawasaki-notice .body img {
+    display: block;
+    border-radius: 5px;
+}
+
+/* レスポンシブ対応（スマホ表示時） */
+@media (max-width: 768px) {
+    #kawasaki-notice {
+        margin: 15px 0;
+    }
+}
+ 
+#wnew {
+	border: 5px solid #B0CB66;
+	padding: 10px;
+}
+#wnew .title {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #B0CB66;
+	color: #799E11;
+	font-weight: bold;
+}
+#wnew .body {
+	padding-top: 15px;
+}
+#wnew .body img {
+	float: left;
+	margin-right: 20px;
+}
+ 
+.con1 {
+	padding-top: 20px;
+}
+.con1 .body {
+	padding-bottom: 30px;
+	padding-left: 5px;
+}
+.con1 h2 {
+	background: url(../images/a00_mds1.gif) no-repeat;
+	height: 75px;
+	width: 460px;
+	text-indent: -9999px;
+}
+.con1 img {
+	float: left;
+	margin-right: 10px;
+}
+
+.con2 {
+}
+.con2 h2 {
+	background: url(../images/a00_mds2.gif) no-repeat;
+	height: 35px;
+	width: 460px;
+	text-indent: -9999px;
+}
+.con2 .body {
+	padding-bottom: 20px;
+	padding-left: 5px;
+}
+.con2 img {
+	float: left;
+	margin-right: 10px;
+}
+
+/*-------------------------------
+
+ main-right
+ 
+ --------------------------------*/ 
+ 
+#main-right ul {}
+#main-right li {
+	list-style-type: none;
+}
+#main-right li a {
+	text-indent: -9999px;
+	display: block;
+}
+
+#bnr-b03 {
+	background-image: url(../images/a00_bnr-b03.png);
+	background-repeat: no-repeat;
+	height: 75px;
+	width: 200px;
+}
+#bnr-b03 a {
+	height: 65px;
+	width: 200px;
+}
+#bnr-b013 {
+	background-image: url(../images/a00_banner-dsis.jpg);
+	background-repeat: no-repeat;
+	height: 153px;
+	width: 200px;
+}
+#bnr-b013 a {
+	height: 153px;
+	width: 200px;
+} 
