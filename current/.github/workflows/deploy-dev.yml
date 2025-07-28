@@ -19,7 +19,7 @@ jobs:
         username: ${{ secrets.DEV_FTP_USERNAME }}
         password: ${{ secrets.DEV_FTP_PASSWORD }}
         local-dir: ./current/build/
-        server-dir: /public_html/
+        server-dir: /yoneda.cc/public_html/dev.yoneda.cc/
         exclude: |
           **/.git*
           **/.git*/**
